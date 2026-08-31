@@ -7,18 +7,27 @@
   <title>LoftMatch – Match Request Received</title>
   <meta name="robots" content="noindex,nofollow">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18403591090"></script>
+  <!-- Consent Mode -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'AW-18403591090');
+    const savedConsent = localStorage.getItem('loftmatch_consent');
+
+    gtag('consent', 'default', {
+      'ad_storage': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'analytics_storage': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'ad_user_data': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'ad_personalization': savedConsent === 'accepted' ? 'granted' : 'denied'
+    });
   </script>
 
-  <!-- Event snippet for LoftMatch – Consultation Request conversion page -->
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18403591090"></script>
   <script>
+    gtag('js', new Date());
+    gtag('config', 'AW-18403591090');
+
     gtag('event', 'conversion', {
       'send_to': 'AW-18403591090/NmpECPqp6eccELKHwsdE'
     });
@@ -36,34 +45,39 @@
       align-items: center;
       justify-content: center;
       padding: 32px 20px;
-      background: #f3f3f3;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #111;
+      background: #f5f6f8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: #111827;
     }
 
     .card {
       width: 100%;
-      max-width: 720px;
+      max-width: 700px;
       background: #fff;
-      padding: 48px 52px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 52px;
+      box-shadow: 0 8px 30px rgba(17,24,39,.05);
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 36px;
     }
 
     h1 {
-      margin: 0 0 28px;
-      font-size: 36px;
-      line-height: 1.25;
-    }
-
-    h2 {
       margin: 0 0 18px;
-      font-size: 24px;
-      line-height: 1.3;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -1px;
     }
 
     p {
-      margin: 0 0 20px;
-      font-size: 17px;
-      line-height: 1.6;
+      margin: 0 0 18px;
+      font-size: 16px;
+      line-height: 1.65;
+      color: #4b5563;
     }
 
     p:last-child {
@@ -78,23 +92,15 @@
       h1 {
         font-size: 29px;
       }
-
-      h2 {
-        font-size: 21px;
-      }
-
-      p {
-        font-size: 16px;
-      }
     }
   </style>
 </head>
 
 <body>
   <main class="card">
-    <h1>LoftMatch – Match Request Received</h1>
+    <div class="brand">LoftMatch UK</div>
 
-    <h2>Thanks — we’ve got your project details</h2>
+    <h1>Thanks — we’ve got your project details</h1>
 
     <p>
       We’ll review your project and, if it’s suitable for one of our loft specialists,
