@@ -42,138 +42,251 @@
 
     body {
       margin: 0;
-      background: #f5f5f5;
-      color: #111;
-      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .hero {
-      background: #ffffff;
-      padding: 72px 20px 58px;
-      text-align: center;
-      border-bottom: 1px solid #e5e5e5;
+    .page {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px 70px;
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .brand {
+      font-size: 21px;
       font-weight: 800;
-      font-size: 22px;
-      margin-bottom: 38px;
+      letter-spacing: -0.4px;
+      color: #111;
+    }
+
+    .nav-note {
+      font-size: 13px;
+      font-weight: 600;
+      color: #6b7280;
+    }
+
+    .shell {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(17, 24, 39, 0.05);
+    }
+
+    .hero {
+      padding: 68px 72px 56px;
+      text-align: center;
+      border-bottom: 1px solid #edf0f3;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 11px;
+      background: #f3f4f6;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #4b5563;
+      letter-spacing: 0.2px;
     }
 
     .hero h1 {
-      max-width: 780px;
+      max-width: 720px;
       margin: 0 auto 18px;
-      font-size: 46px;
-      line-height: 1.12;
+      font-size: 48px;
+      line-height: 1.08;
+      letter-spacing: -1.8px;
+      color: #111;
     }
 
-    .hero p {
-      max-width: 680px;
-      margin: 0 auto 26px;
-      font-size: 19px;
-      line-height: 1.6;
-      color: #444;
+    .hero-copy {
+      max-width: 630px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.65;
+      color: #4b5563;
     }
 
-    .trust {
-      margin-bottom: 30px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #333;
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 26px;
+      margin-top: 28px;
+      font-size: 14px;
+      font-weight: 650;
+      color: #374151;
+    }
+
+    .trust-item::before {
+      content: "✓";
+      margin-right: 7px;
+      font-weight: 800;
+      color: #111;
     }
 
     .cta {
       display: inline-block;
-      padding: 15px 26px;
+      margin-top: 34px;
+      padding: 14px 22px;
       background: #111;
       color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 6px;
-    }
-
-    .form-section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 20px 80px;
-    }
-
-    .form-card {
-      background: #fff;
-      padding: 24px;
       border-radius: 8px;
-      min-height: 650px;
+      font-size: 15px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      opacity: 0.93;
+    }
+
+    .form-area {
+      padding: 30px 34px 34px;
+      background: #fafafa;
+    }
+
+    .form-wrap {
+      background: #fff;
+      border: 1px solid #eceff2;
+      border-radius: 13px;
+      overflow: hidden;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 720px;
+      border: 0;
+      background: #fff;
+    }
+
+    .footer {
+      padding: 24px 6px 0;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #8a919c;
     }
 
     .consent-banner {
       display: none;
       position: fixed;
-      bottom: 18px;
-      left: 18px;
-      right: 18px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
       max-width: 680px;
-      margin: auto;
-      background: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 6px 24px rgba(0,0,0,.14);
-      padding: 18px;
+      margin: 0 auto;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid #dedede;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.13);
       z-index: 9999;
-      border-radius: 8px;
+    }
+
+    .consent-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
     }
 
     .consent-banner p {
-      margin: 0 0 14px;
-      font-size: 14px;
-      line-height: 1.5;
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.45;
+      color: #4b5563;
     }
 
     .consent-actions {
       display: flex;
-      gap: 10px;
+      gap: 8px;
+      flex-shrink: 0;
     }
 
     .consent-actions button {
-      padding: 10px 16px;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 9px 14px;
+      border-radius: 7px;
+      font-size: 13px;
       font-weight: 700;
+      cursor: pointer;
     }
 
     .accept {
+      border: 1px solid #111;
       background: #111;
       color: #fff;
-      border: 1px solid #111;
     }
 
     .reject {
+      border: 1px solid #d1d5db;
       background: #fff;
-      color: #111;
-      border: 1px solid #bbb;
+      color: #374151;
     }
 
-    @media (max-width: 600px) {
-      .hero {
-        padding: 42px 20px 40px;
+    @media (max-width: 700px) {
+      .page {
+        padding: 0 14px 45px;
       }
 
-      .brand {
-        margin-bottom: 28px;
+      .nav {
+        height: 64px;
+      }
+
+      .nav-note {
+        display: none;
+      }
+
+      .shell {
+        border-radius: 14px;
+      }
+
+      .hero {
+        padding: 44px 22px 38px;
       }
 
       .hero h1 {
-        font-size: 34px;
+        font-size: 36px;
+        letter-spacing: -1px;
       }
 
-      .hero p {
-        font-size: 17px;
+      .hero-copy {
+        font-size: 16px;
       }
 
-      .form-section {
-        padding: 30px 12px 60px;
+      .trust-row {
+        gap: 8px 18px;
+        font-size: 13px;
       }
 
-      .form-card {
-        padding: 10px;
+      .form-area {
+        padding: 14px;
+      }
+
+      iframe {
+        height: 700px;
+      }
+
+      .consent-inner {
+        display: block;
+      }
+
+      .consent-actions {
+        margin-top: 12px;
       }
     }
   </style>
@@ -181,51 +294,69 @@
 
 <body>
 
-  <section class="hero">
-    <div class="brand">LoftMatch UK</div>
+  <div class="page">
 
-    <h1>Planning a Loft Conversion in London?</h1>
+    <header class="nav">
+      <div class="brand">LoftMatch UK</div>
+      <div class="nav-note">London loft specialist matching</div>
+    </header>
 
-    <p>
-      Tell us about your project and we'll help match you with a suitable
-      loft conversion specialist.
-    </p>
+    <main class="shell">
 
-    <div class="trust">
-      Free • Takes around 2 minutes • No obligation
-    </div>
+      <section class="hero">
+        <div class="eyebrow">LOFT CONVERSIONS • LONDON</div>
 
-    <a class="cta" href="#project-checker">Find My Loft Specialist</a>
-  </section>
+        <h1>Find the Right Loft Specialist for Your Project</h1>
 
-  <section class="form-section" id="project-checker">
-    <div class="form-card">
-      <iframe
-        id="tally-frame"
-        width="100%"
-        height="700"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="LoftMatch Project Checker">
-      </iframe>
-    </div>
-  </section>
+        <p class="hero-copy">
+          Tell us a little about your loft conversion and we'll help match
+          your project with a suitable London specialist.
+        </p>
+
+        <div class="trust-row">
+          <span class="trust-item">Free matching</span>
+          <span class="trust-item">Around 2 minutes</span>
+          <span class="trust-item">No obligation</span>
+        </div>
+
+        <a href="#project-checker" class="cta">
+          Start My Project Match
+        </a>
+      </section>
+
+      <section class="form-area" id="project-checker">
+        <div class="form-wrap">
+          <iframe
+            id="tally-frame"
+            title="LoftMatch Project Checker"
+            loading="eager">
+          </iframe>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      LoftMatch UK helps homeowners connect with suitable loft conversion specialists.
+    </footer>
+
+  </div>
 
   <div class="consent-banner" id="consent-banner">
-    <p>
-      LoftMatch uses Google advertising measurement to understand whether our ads
-      lead to project enquiries. You can accept or reject this measurement.
-    </p>
+    <div class="consent-inner">
+      <p>
+        We use Google advertising measurement to understand whether our ads lead
+        to project enquiries. You can accept or reject this measurement.
+      </p>
 
-    <div class="consent-actions">
-      <button class="accept" onclick="setConsent('accepted')">Accept</button>
-      <button class="reject" onclick="setConsent('rejected')">Reject</button>
+      <div class="consent-actions">
+        <button class="reject" onclick="setConsent('rejected')">Reject</button>
+        <button class="accept" onclick="setConsent('accepted')">Accept</button>
+      </div>
     </div>
   </div>
 
   <script>
-    // Pass Google Ads click ID into Tally
     const params = new URLSearchParams(window.location.search);
     const gclid = params.get('gclid');
 
@@ -237,7 +368,6 @@
 
     document.getElementById('tally-frame').src = tallyUrl;
 
-    // Consent banner
     const consentBanner = document.getElementById('consent-banner');
 
     if (!savedConsent) {
