@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LoftMatch – Match Request Received</title>
-  <meta name="robots" content="noindex,nofollow">
+  <title>LoftMatch UK – Find a Loft Conversion Specialist</title>
+  <meta name="description" content="Planning a loft conversion in London? Tell LoftMatch about your project and get matched with a suitable loft conversion specialist.">
+  <meta name="robots" content="index,follow">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18403591090"></script>
+  <!-- Consent Mode defaults -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'AW-18403591090');
+    const savedConsent = localStorage.getItem('loftmatch_consent');
+
+    gtag('consent', 'default', {
+      'ad_storage': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'analytics_storage': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'ad_user_data': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'ad_personalization': savedConsent === 'accepted' ? 'granted' : 'denied',
+      'wait_for_update': 500
+    });
   </script>
 
-  <!-- Event snippet for LoftMatch – Consultation Request conversion page -->
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18403591090"></script>
   <script>
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18403591090/NmpECPqp6eccELKHwsdE'
-    });
+    gtag('js', new Date());
+    gtag('config', 'AW-18403591090');
   </script>
 
   <style>
@@ -29,81 +36,229 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 20px;
-      background: #f3f3f3;
-      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
       color: #111;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .card {
-      width: 100%;
-      max-width: 720px;
-      background: #fff;
-      padding: 48px 52px;
+    .hero {
+      background: #ffffff;
+      padding: 72px 20px 58px;
+      text-align: center;
+      border-bottom: 1px solid #e5e5e5;
     }
 
-    h1 {
-      margin: 0 0 28px;
-      font-size: 36px;
-      line-height: 1.25;
+    .brand {
+      font-weight: 800;
+      font-size: 22px;
+      margin-bottom: 38px;
     }
 
-    h2 {
-      margin: 0 0 18px;
-      font-size: 24px;
-      line-height: 1.3;
+    .hero h1 {
+      max-width: 780px;
+      margin: 0 auto 18px;
+      font-size: 46px;
+      line-height: 1.12;
     }
 
-    p {
-      margin: 0 0 20px;
-      font-size: 17px;
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 26px;
+      font-size: 19px;
       line-height: 1.6;
+      color: #444;
     }
 
-    p:last-child {
-      margin-bottom: 0;
+    .trust {
+      margin-bottom: 30px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 15px 26px;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+
+    .form-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+    }
+
+    .form-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      min-height: 650px;
+    }
+
+    .consent-banner {
+      display: none;
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      max-width: 680px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 6px 24px rgba(0,0,0,.14);
+      padding: 18px;
+      z-index: 9999;
+      border-radius: 8px;
+    }
+
+    .consent-banner p {
+      margin: 0 0 14px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .consent-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .consent-actions button {
+      padding: 10px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .accept {
+      background: #111;
+      color: #fff;
+      border: 1px solid #111;
+    }
+
+    .reject {
+      background: #fff;
+      color: #111;
+      border: 1px solid #bbb;
     }
 
     @media (max-width: 600px) {
-      .card {
-        padding: 34px 26px;
+      .hero {
+        padding: 42px 20px 40px;
       }
 
-      h1 {
-        font-size: 29px;
+      .brand {
+        margin-bottom: 28px;
       }
 
-      h2 {
-        font-size: 21px;
+      .hero h1 {
+        font-size: 34px;
       }
 
-      p {
-        font-size: 16px;
+      .hero p {
+        font-size: 17px;
+      }
+
+      .form-section {
+        padding: 30px 12px 60px;
+      }
+
+      .form-card {
+        padding: 10px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="card">
-    <h1>LoftMatch – Match Request Received</h1>
 
-    <h2>Thanks — we’ve got your project details</h2>
+  <section class="hero">
+    <div class="brand">LoftMatch UK</div>
 
-    <p>
-      We’ll review your project and, if it’s suitable for one of our loft specialists,
-      we’ll let you know who you’ve been matched with before your details are passed on.
-    </p>
+    <h1>Planning a Loft Conversion in London?</h1>
 
     <p>
-      There’s no obligation to proceed with any quotation or work.
+      Tell us about your project and we'll help match you with a suitable
+      loft conversion specialist.
     </p>
-  </main>
+
+    <div class="trust">
+      Free • Takes around 2 minutes • No obligation
+    </div>
+
+    <a class="cta" href="#project-checker">Find My Loft Specialist</a>
+  </section>
+
+  <section class="form-section" id="project-checker">
+    <div class="form-card">
+      <iframe
+        id="tally-frame"
+        width="100%"
+        height="700"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="LoftMatch Project Checker">
+      </iframe>
+    </div>
+  </section>
+
+  <div class="consent-banner" id="consent-banner">
+    <p>
+      LoftMatch uses Google advertising measurement to understand whether our ads
+      lead to project enquiries. You can accept or reject this measurement.
+    </p>
+
+    <div class="consent-actions">
+      <button class="accept" onclick="setConsent('accepted')">Accept</button>
+      <button class="reject" onclick="setConsent('rejected')">Reject</button>
+    </div>
+  </div>
+
+  <script>
+    // Pass Google Ads click ID into Tally
+    const params = new URLSearchParams(window.location.search);
+    const gclid = params.get('gclid');
+
+    let tallyUrl = 'https://tally.so/r/QKNAjk';
+
+    if (gclid) {
+      tallyUrl += '?gclid=' + encodeURIComponent(gclid);
+    }
+
+    document.getElementById('tally-frame').src = tallyUrl;
+
+    // Consent banner
+    const consentBanner = document.getElementById('consent-banner');
+
+    if (!savedConsent) {
+      consentBanner.style.display = 'block';
+    }
+
+    function setConsent(choice) {
+      localStorage.setItem('loftmatch_consent', choice);
+
+      const granted = choice === 'accepted' ? 'granted' : 'denied';
+
+      gtag('consent', 'update', {
+        'ad_storage': granted,
+        'analytics_storage': granted,
+        'ad_user_data': granted,
+        'ad_personalization': granted
+      });
+
+      consentBanner.style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
