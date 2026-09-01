@@ -358,12 +358,24 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
+
+    const tallyParams = new URLSearchParams();
+
     const gclid = params.get('gclid');
+    const source = params.get('source');
+
+    if (gclid) {
+      tallyParams.set('gclid', gclid);
+    }
+
+    if (source) {
+      tallyParams.set('source', source);
+    }
 
     let tallyUrl = 'https://tally.so/r/QKNAjk';
 
-    if (gclid) {
-      tallyUrl += '?gclid=' + encodeURIComponent(gclid);
+    if (tallyParams.toString()) {
+      tallyUrl += '?' + tallyParams.toString();
     }
 
     document.getElementById('tally-frame').src = tallyUrl;
